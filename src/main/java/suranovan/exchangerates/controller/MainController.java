@@ -29,7 +29,7 @@ public class MainController {
      * @throws IOException
      */
     @GetMapping("/someEndpoint")
-    public ResponseEntity<List<Double>> getTopFiveValuteExchangeRates() throws IOException {
+    public ResponseEntity<List<String>> getTopFiveValuteExchangeRates() throws IOException {
         return service.getExchangeRates(limit);
     }
 }

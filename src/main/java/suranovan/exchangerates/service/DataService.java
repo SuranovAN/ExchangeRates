@@ -27,13 +27,13 @@ public class DataService {
      * @return Лист с изменениями с валютой за сутки.
      * @throws IOException
      */
-    public ResponseEntity<List<Double>> getExchangeRates(int limit) throws IOException {
+    public ResponseEntity<List<String>> getExchangeRates(int limit) throws IOException {
         var data = repository.getDataFromUrl();
         double a = 0d;
-        List<Double> list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         for (Map.Entry<String, Entity> entity : data.getEntityMap().entrySet()) {
-            var rates = Math.abs(entity.getValue().value - entity.getValue().previous);
-            list.add(rates);
+            var rates = entity.getValue().value - entity.getValue().previous;
+            list.add(entity.getKey() + " " + rates);
         }
 
         return ResponseEntity.ok().body(
