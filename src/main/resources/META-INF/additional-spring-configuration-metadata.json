@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "valute.data.url",
+      "type": "java.lang.String",
+      "description": "URL c JSON файлом данных о валютах."
+    },
+    {
+      "name": "top.exchange.rates",
+      "type": "java.lang.String",
+      "description": "Максимальное количество выводимого результатом."
+    }
+  ] }
